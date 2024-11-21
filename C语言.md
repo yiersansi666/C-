@@ -10,7 +10,7 @@
 在32位系统中，系统会为每个进程分配4GB的空间（虚拟）。
 
 ## 堆区（可读可写）
-只能通过 **`malloc`** **`calloc`** **`realloc`  `free` **操作
+只能通过 **`malloc`** **`calloc`** **`realloc`  `free` **操作
 
 ## 栈区（可读可写）
 可用 **`&`**  操作
@@ -47,12 +47,12 @@
 >
 
 ```c
-int a = 20;
+int</font>a</font>=</font>20;
 {
-	int a = 10;
-	printf("1   %d\n",a);
+	int</font>a</font>=</font>10;
+	printf("1</font></font></font>%d\n",a);
 	}
-printf("2   %d\n",a);
+printf("2</font></font></font>%d\n",a);
 ```
 
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1700488088245-8aaeacdb-b4b0-43cf-87f8-50d8ee7d3a71.png)
@@ -76,7 +76,7 @@ printf("2   %d\n",a);
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1700613316783-26f9d0b4-8874-416e-9f17-dffe858c3835.png)
 
 ## 静态局部变量
-- 定义形式：在 **`{ }`**  定义，加  **`static`**修饰
+- 定义形式：在 **`{ }`**  定义，加  **`static`**修饰
 
 - 作用范围：{ } 里有效
 
@@ -992,9 +992,9 @@ int main(int argc, char const *argv[])
 ## 数组指针
 本质是数组
 
-<font style="color:rgb(77, 77, 77);">数组指针，顾名思义，就是指向数组的指针。</font>
+数组指针，顾名思义，就是指向数组的指针。
 
-数组指针变量：本质是指针变量 保存的是数组的 <font style="color:#DF2A3F;">首地址</font>
+数组指针变量：本质是指针变量 保存的是数组的 首地址
 
 ```c
 int arr[5] = {10,20,30,40,50};
@@ -1008,14 +1008,14 @@ printf("&arr+1 = %lu\n", &arr+1);
 
 ****
 
-**`arr**` 和 **`&arr****` **地址编号上是同一个地址编号，只是类型不同
+**`arr`** 和 **`&arr`**地址编号上是同一个地址编号，只是类型不同
 
 
 
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701071812001-6bb3bcdb-e207-401e-a5d7-0406fb681ce6.png)
 
-### `*p` `int(* p)[n] = { }`<font style="color:rgb(77, 77, 77);"> </font>数组指针定义
-<font style="color:rgb(77, 77, 77);">（）里是 </font>**`<font style="color:rgb(77, 77, 77);">*p</font>**`<font style="color:rgb(77, 77, 77);">，先定义了指针，所以 </font>**`<font style="color:rgb(77, 77, 77);">p</font>**`<font style="color:rgb(77, 77, 77);"> 是个指针，然后后面是[ ],才是数组，即 </font>**<font style="color:rgb(77, 77, 77);">数组指针</font>**<font style="color:rgb(77, 77, 77);">。</font>它指向了含有 **`n**` 个 **`int**` 类型的数组。
+### `*p` `int(* p)[n] = { }`数组指针定义
+（）里是 **`*p`**，先定义了指针，所以 **`p`**  是个指针，然后后面是[ ],才是数组，即 **数组指针**。它指向了含有 **`n`** 个 **`int`** 类型的数组。
 
 ![如上图所示，假设定义 int (*p2)[5] = { 0, 0, 0, 0, 0}; 那么p2就指向了这个包含5个int类型的数组了p2在内存中指向的是这个数组的首地址，是和数组有关联的，而绝不仅仅是指向数组首元素的地址](https://cdn.nlark.com/yuque/0/2023/jpeg/40457975/1701073786561-4a9e3602-4185-4cb3-92e8-dd493c1860e3.jpeg)
 
@@ -1052,7 +1052,7 @@ return 0;
 
 
 
-**`arr[n1]**` 和 **`(*p)[n2]****` ** <font style="color:#DF2A3F;">n1和 n2必须 相等</font>
+**`arr[n1]`** 和 **`(*p)[n2]`** n1和 n2必须 相等
 
 ## 二维数组
 ![画板](https://cdn.nlark.com/yuque/0/2023/jpeg/40457975/1701092724796-6582394c-b57a-47c4-beaf-eea331549553.jpeg)
@@ -1066,17 +1066,17 @@ printf("%d\n",*(arr[1]+2));
 
 ![三个表达式等价](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701079175555-04d290e3-3916-4ada-9a18-e061ac46b702.png)
 
-> **`int (*p)[4] = arr****` **这时候指针 **`p**` 和 **`arr**` 二维数组完全等价
+> **`int (*p)[4] = arr` **这时候指针 **`p`** 和 **`arr`** 二维数组完全等价
 >
-> 一维数组指针 **`int (*p)****<font style="color:#DF2A3F;">[4]</font>********` **和二维的数组名 **`int arr[3]****<font style="color:#DF2A3F;">[4]</font>**` 是等价
+> 一维数组指针 **`int (*p)[4]`** 和二维的数组名 **`int arr[3][4]`** 是等价
 >
-> 二维数组指针 **`int (*p)****<font style="color:#DF2A3F;">[4][5]</font>****` **和三维的数组名 **`int arr[3]****<font style="color:#DF2A3F;">[4][5]</font>**` 是等价
+> 二维数组指针 **`int (*p)[4][5]`**  和三维的数组名 **`int arr[3][4][5]`** 是等价
 >
 
 ## 指针变量传值调用
 **自定义函数必须通过指针才能更改函数外部的数据的值**
 
-使用传递地址操作可以通过自定义函数<font style="color:#DF2A3F;">修改</font> **`main**` 函数内定义数字的数值
+使用传递地址操作可以通过自定义函数**修改 `main`** 函数内定义数字的数值
 
 ```c
 void set_void(int *p){
@@ -1126,7 +1126,7 @@ int main(int argc, char const *argv[])
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701163873810-19a0183d-532c-4a0c-b8d9-7a63af73ddba.png)
 
 ## **指针作为函数的的返回值**
-函数不要返回局部变量 <font style="color:#DF2A3F;">函数结束</font> 函数内部的局部变量和局部数据将被 <font style="color:#DF2A3F;">释放</font>
+函数不要返回局部变量 **函数结束** 函数内部的局部变量和局部数据将被 **释放**
 
 ```c
 #include<stdio.h>
@@ -1148,32 +1148,32 @@ int main(int argc, char const *argv[])
 
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701165563158-8bb44670-901c-42a3-b1e2-0ffcf1c0ab38.png)
 
-加入 **`static**`
+加入 **`static`**
 
-**`static****` **静态局部变量
+**`static` **静态局部变量
 
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701165650953-a735ea26-3a70-45b6-8e5d-374fdebe35b4.png)
 
 ## 函数指针
-| **`()****` 优先级 > ****`***` | 主体 | 返回类型 |
+| **`()` 优先级 > `*`** | 主体 | 返回类型 |
 | --- | --- | --- |
-| 指针函数 **`int *p(int x,int y);**` | 函数 | 返回值为指针类型 |
-| 函数指针 **`int (*p)(int x,int y);**` | 指针 | **`(*p)****` **是指针 指向一个函数 |
+| 指针函数 **`int *p(int x,int y);`** | 函数 | 返回值为指针类型 |
+| 函数指针 **`int (*p)(int x,int y);`** | 指针 | **`(*p)`**是指针 指向一个函数 |
 
 
-本质是一个<font style="color:#DF2A3F;">指针变量</font> 指向该地址保存的是<font style="color:#DF2A3F;">函数入口地址</font>
+本质是一个**指针变量**  指向该地址保存的是 **函数入口地址**
 
-<font style="color:#DF2A3F;">函数名 </font>代表的是函数的<font style="color:#DF2A3F;"> 入口地址</font>
+**函数名** 代表的是函数的 **入口地址**
 
 ```c
-printf("%d",printf);//Print 0x400400
+printf("%p",printf);//Print 0x400400
 ```
 
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701173813732-b20ba67e-922b-4a97-b0bc-6e8e236deae0.png)
 
  
 
-**`int (*p)(int x, int  y);  == int (*p)(int, int);**`
+**`int (*p)(int x, int  y);  == int (*p)(int, int);`**
 
 参数名可以去掉，并且通常都是去掉的。这样指针p就可以保存函数类型为两个整型参数
 
@@ -1211,33 +1211,32 @@ int main(int argc, char const *argv[])
 
 # 动态内存申请
 ## 堆空间
-需要使用 **`malloc**` **`calloc**` **`realloc**` 从堆空间申请空间，<font style="color:#DF2A3F;">必须</font> 使用 <font style="color:#DF2A3F;">指针变量 </font>取保存得到的地址编号
+需要使用 **`malloc` `calloc` `realloc`** 从堆空间申请空间，必须 使用 **指针变量** 取保存得到的地址编号
 
-使用完后 调用 **`free**` 释放堆区空间
+使用完后 调用 **`free`** 释放堆区空间
 
-在 **`Ubuntu 16.04**` 中使用 **`gcc**` 编译器 **`malloc****` **会对申请到的空间自动清零
+在 **`Ubuntu 16.04`** 中使用 **`gcc`** 编译器 **`malloc`**会对申请到的空间自动清零
 
-**`calloc****` **可以自动清零
+**`calloc`**可以自动清零
 
-队去空间是在程序需要 申请 所以又叫做 **`动态空间**`
+队去空间是在程序需要 申请 所以又叫做 **`动态空间`**
 
-## **`malloc**` 申请堆区空间
+## `malloc` 申请堆区空间
 ```c
 #include<stdlib.h>
 void *malooc(size_t size);
 ```
 
-> **`size****` **申请空间大小 （单位字节）
->
+> **`size`**申请空间大小 （单位字节）
 
 返回值 ：
 
 > 成功：返回堆空间的起始地址
 >
-> 失败：返回 **`NULL**`
+> 失败：返回 **`NULL`**
 >
 
-注意：对 **`malloc****` **返回值 强转类型
+
 
 ### **申请空间**
 ```c
@@ -1259,7 +1258,7 @@ printf("%d\n",*p);
 ```
 
 ### 释放空间
-只能释放 **`堆区**`的空间
+只能释放 **`堆区`**的空间
 
 ```c
 free(p);
@@ -1267,11 +1266,12 @@ free(p);
 
 ### ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701223800877-e1320b4b-a8bb-4302-a7da-cb7b2ebc2804.png)
 ### 申请动态数组
-**`int *arr;****` **定义指针
 
-**`arr =  (int *)malloc(sizeof(int)*n);****` **为指针申请 **`n**` 个 **`sizeof(int)****` **大小的内存
+申请动态数组的基本流程：
 
-**`free****` **释放空间
+1. **`int *arr;` **定义指针
+2. **`arr =  (int *)malloc(sizeof(int)*n);`**为指针申请 **`n`** 个 **`sizeof(int)`**大小的内存
+3. **`free`**释放空间
 
 ```c
 #include <stdio.h>
@@ -1303,18 +1303,17 @@ int main(int argc, char const *argv[])
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701236848033-abee660a-9f5a-4037-bf79-e39e0b8defbc.png)
 
 ## calloc
-任何平台下 **`calloc****` **可以自动清零
+任何平台下 **`calloc`**可以自动清零
 
-**`void *calloc(size_t nitems, size_t size)**`
+**`void *calloc(size_t nitems, size_t size)`**
 
-> **<font style="color:rgb(51, 51, 51);">nitems</font>**<font style="color:rgb(51, 51, 51);"> -- 要被分配的元素个数。</font>
+> **nitems** -- 要被分配的元素个数。
 >
-> **<font style="color:rgb(51, 51, 51);">size</font>**<font style="color:rgb(51, 51, 51);"> -- 元素的大小</font>
->
+> **size** -- 元素的大小
 
-<font style="color:rgb(51, 51, 51);">该函数返回一个指针，指向已分配的内存。如果请求失败，则返回 </font>**`<font style="color:rgb(51, 51, 51);">NULL</font>**`
+该函数返回一个指针，指向已分配的内存。如果请求失败，则返回**`NULL`**
 
-**`<font style="color:rgb(51, 51, 51);">calloc</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">申请的空间必定连续</font>
+**`calloc`**申请的空间必定连续
 
 ```c
 #include <stdio.h>
@@ -1345,14 +1344,13 @@ int main(int argc, char const *argv[])
  ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701237814020-cde7814c-a576-4065-ab74-875a53996fd6.png)
 
 ## `realloc` 追加空间
-**`realloc**` 只能对 **`<font style="color:#DF2A3F;">malloc</font>**`<font style="color:#DF2A3F;"> </font>或 **`<font style="color:#DF2A3F;">calloc</font>**`<font style="color:#DF2A3F;"> </font>申请的堆区空间进行追加
+**`realloc`** 只能对 **`malloc`** 或 **`calloc`** 申请的堆区空间进行追加
 
-**`void *realloc(void *ptr, size_t size)**`
+**`void *realloc(void *ptr, size_t size)`**
 
-> **<font style="color:rgb(51, 51, 51);">ptr</font>**<font style="color:rgb(51, 51, 51);"> -- 指针指向一个要重新分配内存的内存块，该内存块之前是通过调用 malloc、calloc 或 realloc 进行分配内存的。如果为空指针，则会分配一个新的内存块，且函数返回一个指向它的指针。</font>
+> **ptr** -- 指针指向一个要重新分配内存的内存块，该内存块之前是通过调用 malloc、calloc 或 realloc 进行分配内存的。如果为空指针，则会分配一个新的内存块，且函数返回一个指向它的指针。
 >
-> **<font style="color:rgb(51, 51, 51);">size</font>**<font style="color:rgb(51, 51, 51);"> -- 内存块的新的大小，以字节为单位。如果大小为 0，且 ptr 指向一个已存在的内存块，则 ptr 所指向的内存块会被释放，并返回一个空指针</font>
->
+> **size** -- 内存块的新的大小，以字节为单位。如果大小为 0，且 ptr 指向一个已存在的内存块，则 ptr 所指向的内存块会被释放，并返回一个空指针
 
 ```c
 int *arr;
@@ -1360,23 +1358,19 @@ arr = (int *)realloc(sizeof(int)*(5+5));
 ```
 
 ## `memset` 内存空间设置
-```c
-#include<string.h>
-void *memset(void *str, int c, size_t n)
-```
+**`void *memset(void *str, int c, size_t n)`**
 
-<font style="color:rgb(51, 51, 51);">复制字符 </font>**`<font style="color:rgb(51, 51, 51);">c</font>**`<font style="color:rgb(51, 51, 51);">（一个无符号字符）到参数 </font>**`<font style="color:rgb(51, 51, 51);">str</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">所指向的字符串的前 </font>**`<font style="color:rgb(51, 51, 51);">n</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">个字符</font>
+复制字符 **`c`**（一个无符号字符）到参数 **`str`** 所指向的字符串的前 **`n`** 个字符
 
-> **<font style="color:rgb(51, 51, 51);">str</font>**<font style="color:rgb(51, 51, 51);"> -- 指向要填充的内存块。</font>
+> **str** -- 指向要填充的内存块。
 >
-> **<font style="color:rgb(51, 51, 51);">c</font>**<font style="color:rgb(51, 51, 51);"> -- 要被设置的值。该值以 int 形式传递，但是函数在填充内存块时是使用该值的无符号字符形式。</font>
+> **c** -- 要被设置的值。该值以 int 形式传递，但是函数在填充内存块时是使用该值的无符号字符形式。
 >
-> **<font style="color:rgb(51, 51, 51);">n</font>**<font style="color:rgb(51, 51, 51);"> -- 要被设置为该值的字符数。</font>
->
+> **n** -- 要被设置为该值的字符数。
 
-注意：字符串操作时不会添加 **`\0****` **对字符串遍历时容易越界。
+注意：字符串操作时不会添加 **`\0`** 对字符串遍历时容易越界。
 
-返回值：<font style="color:rgb(51, 51, 51);">该值返回一个指向存储区 </font>**`<font style="color:rgb(51, 51, 51);">str</font>**`<font style="color:rgb(51, 51, 51);"> 的指针。</font>
+返回值：该值返回一个指向存储区 **`str`** 的指针。
 
 ```c
 #include <stdio.h>
@@ -1399,16 +1393,15 @@ int main ()
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701240906513-68890707-a36b-4c91-9b9e-68c4cc2a7532.png)
 
 ## `memcpy`内存拷贝
-**`void *memcpy(void *str1, const void *str2, size_t n)**`<font style="color:rgb(51, 51, 51);">从存储区 </font>**`<font style="color:rgb(51, 51, 51);">str2</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">复制 </font>**`<font style="color:rgb(51, 51, 51);">n</font>**`<font style="color:rgb(51, 51, 51);"> 个字节到存储区 </font>**`<font style="color:rgb(51, 51, 51);">str1</font>**`<font style="color:rgb(51, 51, 51);">。</font>
+**`void *memcpy(void *str1, const void *str2, size_t n)`** 从存储区 **`str2`** 复制 **`n`** 个字节到存储区 **`str1`**。
 
-> **<font style="color:rgb(51, 51, 51);">str1</font>**<font style="color:rgb(51, 51, 51);"> -- 指向用于存储复制内容的目标数组，类型强制转换为 void* 指针。</font>
+> **str1** -- 指向用于存储复制内容的目标数组，类型强制转换为 void* 指针。
 >
-> **<font style="color:rgb(51, 51, 51);">str2</font>**<font style="color:rgb(51, 51, 51);"> -- 指向要复制的数据源，类型强制转换为 void* 指针。</font>
+> **str2** -- 指向要复制的数据源，类型强制转换为 void* 指针。
 >
-> **<font style="color:rgb(51, 51, 51);">n</font>**<font style="color:rgb(51, 51, 51);"> -- 要被复制的字节数。</font>
->
+> **n** -- 要被复制的字节数
 
-返回值：<font style="color:rgb(51, 51, 51);">该函数返回一个指向目标存储区 </font>**`<font style="color:rgb(51, 51, 51);">str1</font>**`<font style="color:rgb(51, 51, 51);"> 的指针。</font>
+返回值：该函数返回一个指向目标存储区 **`str1`** 的指针。
 
 ```c
 #include <stdio.h>
@@ -1433,7 +1426,7 @@ int main(int argc, char const *argv[])
 
 ## 静态数组和动态数组
 ### 静态数组
-**类似****`int arr[5]****` **
+**类似**`int arr[5]`**
 
 在编译的时候就已经确定了数组的大小。
 
@@ -1482,13 +1475,13 @@ int main(int argc, char const *argv[])
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701245003825-14ba825f-fa3d-4641-8d7f-3d0a6cef96a8.png)
 
 # 字符串操作
-字符串操作函数 一般以 **`str****` **开头 默认遇到 **`\0**` 结束
+字符串操作函数 一般以 **`str`** 开头 默认遇到 **`\0`** 结束
 
-需要头文件 **`<string.h>**`
+需要头文件 **`<string.h>`**
 
-**`char *p；****` **空间在字符常量区，**<font style="color:#DF2A3F;">无法 </font>**进行写入操作；
+**`char *p`** 空间在字符常量区，**无法** 进行写入操作；
 
-**`char p[128]****` **空间在 **<font style="color:#DF2A3F;">栈里 </font>**可读可写
+**`char p[128]`** 空间在 **栈里** 可读可写
 
 ## `sizeof()` 和 `strlen()`（头文件`string.h`）
 ```c
@@ -1496,15 +1489,14 @@ sizeof(type)
 sizeof(variable)
 ```
 
-> <font style="color:rgb(51, 51, 51);">type 是一个类型名</font>
+> type 是一个类型名
 >
-> <font style="color:rgb(51, 51, 51);">variable 是一个变量名</font>
->
+> variable 是一个变量名
 
-+ **`<font style="color:rgb(51, 51, 51);">sizeof()</font>**`<font style="color:rgb(51, 51, 51);"> 是一个运算符，而 </font>**`<font style="color:rgb(51, 51, 51);">strlen()</font>**`<font style="color:rgb(51, 51, 51);"> 是一个函数。</font>
-+ **`<font style="color:rgb(51, 51, 51);">sizeof()</font>**`<font style="color:rgb(51, 51, 51);"> 计算的是变量或类型所占用的内存字节数，而 </font>**`<font style="color:rgb(51, 51, 51);">strlen()</font>**`<font style="color:rgb(51, 51, 51);"> 计算的是字符串中字符的个数。</font>
-+ **`<font style="color:rgb(51, 51, 51);">sizeof()</font>**`<font style="color:rgb(51, 51, 51);"> 可以用于任何类型的数据，而 strlen() 只能用于以空字符  </font>**`<font style="color:rgb(51, 51, 51);">\0</font>**`<font style="color:rgb(51, 51, 51);">  结尾的字符串。</font>
-+ **`<font style="color:rgb(51, 51, 51);">sizeof()</font>**`<font style="color:rgb(51, 51, 51);"> 计算字符串的长度，</font><font style="color:#DF2A3F;">包含</font><font style="color:rgb(51, 51, 51);">末尾的 </font>**`<font style="color:rgb(51, 51, 51);">\0</font>**`<font style="color:rgb(51, 51, 51);">，</font>**`<font style="color:rgb(51, 51, 51);">strlen()</font>**`<font style="color:rgb(51, 51, 51);">计算字符串的长度，</font><font style="color:#DF2A3F;">不包含</font><font style="color:rgb(51, 51, 51);">字符串末尾的 </font>**`<font style="color:rgb(51, 51, 51);">\0</font>**`<font style="color:rgb(51, 51, 51);"></font>
++ **`sizeof()`**是一个运算符，而 **`strlen()`**是一个函数。
++ **`sizeof()`** 计算的是变量或类型所占用的内存字节数，而 **`strlen()`** 计算的是字符串中字符的个数。
++ **`sizeof()`** 可以用于任何类型的数据，而 strlen() 只能用于以空字符  **`\0`**  结尾的字符串。
++ **`sizeof()`** 计算字符串的长度，包含末尾的 **`\0`**，**`strlen()`**计算字符串的长度，不包含字符串末尾的 **`\0`**
 
 ```c
 char s1[]="Hello World";
@@ -1526,13 +1518,13 @@ printf("%d\n",sizeof(s2)); //print 13
 printf("%d\n",strlen(s2));//print 0
 ```
 
-**`sizeof****` **函数识别 **`" "**` 内容;
+**`sizeof`**函数识别 **`" "`** 内容;
 
-**`size_t strlen(const char *str)**`
+**`size_t strlen(const char *str)`**
 
-> 遇到 **`\0**` 结束，不包含 **`\0**`；
+> 遇到 **`\0`** 结束，不包含 **`\0`**；
 >
-> 返回值为** ****`unsigned long int**`
+> 返回值为 **`unsigned long int`**
 >
 
 ```c
@@ -1551,22 +1543,21 @@ int main(int argc, char const *argv[])
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701245538599-fa058f68-4941-4a3f-acd3-8cb01029901e.png)
 
 ## `strcpy` 字符换拷贝函数
-**`char *strcpy(char *dest, const char *src)**`
+**`char *strcpy(char *dest, const char *src)`**
 
-> **`<font style="color:rgb(51, 51, 51);">dest</font>**<font style="color:rgb(51, 51, 51);"></font>`<font style="color:rgb(51, 51, 51);">-- 指向用于存储复制内容的目标数组。</font>
+> **`dest`**-- 指向用于存储复制内容的目标数组。
 >
-> **`<font style="color:rgb(51, 51, 51);">src</font>**<font style="color:rgb(51, 51, 51);"></font>`<font style="color:rgb(51, 51, 51);">-- 要复制的字符串</font>
->
+> **`src`**-- 要复制的字符串
 
-<font style="color:rgb(51, 51, 51);">把 </font>**`<font style="color:rgb(51, 51, 51);">src</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">所指向的字符串复制到 </font>**`<font style="color:rgb(51, 51, 51);">dest</font>**`
+把 **`src`** 所指向的字符串复制到 **`dest`**
 
-<font style="color:rgb(51, 51, 51);">返回值：该函数返回一个指向最终的目标字符串 dest 的指针。</font>
+返回值：该函数返回一个指向最终的目标字符串 dest 的指针。
 
-<font style="color:rgb(51, 51, 51);">注意：如果目标数组 </font>**`<font style="color:rgb(51, 51, 51);">dest</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">不够大，而源字符串的长度又太长，可能会造成缓冲溢出的情况。</font>
+注意：如果目标数组 **`dest`** 不够大，而源字符串的长度又太长，可能会造成缓冲溢出的情况。
 
-<font style="color:rgb(51, 51, 51);">遇到字符串赋值，必须使用 </font>**`<font style="color:rgb(51, 51, 51);">strcpy</font>**`
+遇到字符串赋值，必须使用 **`strcpy`**
 
-<font style="color:rgb(51, 51, 51);">遇到 </font>**`<font style="color:rgb(51, 51, 51);">\0</font>**`<font style="color:rgb(51, 51, 51);"> 停止操作</font>
+遇到 **`\0`** 停止操作
 
 ```c
 char arr[128] = "Hello \0World";
@@ -1579,18 +1570,17 @@ printf("%s\n",arr1);
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701252438132-dd80f83d-b4e7-4673-a99c-7dd81871c509.png)
 
 ## `strncpy` 拷贝前 `n` 个字符串
-**`char *strncpy(char *dest, const char *src, size_t n)**`
+**`char *strncpy(char *dest, const char *src, size_t n)`**
 
-> **`<font style="color:rgb(51, 51, 51);">dest</font>**`<font style="color:rgb(51, 51, 51);">-- 指向用于存储复制内容的目标数组。</font>
+> **`dest`**-- 指向用于存储复制内容的目标数组。
 >
-> **`<font style="color:rgb(51, 51, 51);">src</font>**`<font style="color:rgb(51, 51, 51);">-- 要复制的字符串。</font>
+> **`src`**-- 要复制的字符串。
 >
-> **`<font style="color:rgb(51, 51, 51);">n</font>**`<font style="color:rgb(51, 51, 51);">-- 要从源中复制的字符数。</font>
->
+> **`n`**-- 要从源中复制的字符数。
 
-<font style="color:rgb(51, 51, 51);">把 </font>**`<font style="color:rgb(51, 51, 51);">src</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">所指向的字符串复制到 </font>**`<font style="color:rgb(51, 51, 51);">dest</font>**`<font style="color:rgb(51, 51, 51);">，最多复制 </font>**`<font style="color:rgb(51, 51, 51);">n</font>**`<font style="color:rgb(51, 51, 51);"> 个字符。当 </font>**`<font style="color:rgb(51, 51, 51);">src</font>**`<font style="color:rgb(51, 51, 51);">的长度小于 </font>**`<font style="color:rgb(51, 51, 51);">n</font>**`<font style="color:rgb(51, 51, 51);"> 时，</font>**`<font style="color:rgb(51, 51, 51);">dest</font>**`<font style="color:rgb(51, 51, 51);"> 的剩余部分将用</font><font style="color:#DF2A3F;">空</font><font style="color:rgb(51, 51, 51);"> </font>`<font style="color:rgb(51, 51, 51);"> </font>`<font style="color:rgb(51, 51, 51);"> 字节填充。</font>
+把 **`src`** 所指向的字符串复制到 **`dest`**，最多复制 **`n`** 个字符。当 **`src`**的长度小于 **`n`** 时，**`dest`** 的剩余部分将用空 `   ` 字节填充。
 
-**`strncpy****`  **函数在遇到 **`\0****` **停止操作。
+**`strncpy`**  函数在遇到 **`\0`** 停止操作。
 
 ```c
 char arr[128] = "Hello World";
@@ -1606,22 +1596,21 @@ printf("%s\n",arr3);// Print"Hel"
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701253869440-3aa779f7-bd7b-4bfb-988c-cfa8e46afb1c.png)
 
 ## `strcat` `strncat` 字符串追加函数
-**`char *strcat(char *dest, const char *src)**`
+**`char *strcat(char *dest, const char *src)`**
 
-<font style="color:rgb(51, 51, 51);">把 </font>**`<font style="color:rgb(51, 51, 51);">src</font>**`<font style="color:rgb(51, 51, 51);"> 所指向的字符串追加到 </font>**`<font style="color:rgb(51, 51, 51);">dest</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">所指向的字符串的结尾</font>
+把 **`src`** 所指向的字符串追加到 **`dest`** 所指向的字符串的结尾
 
-**`char *strncat(char *dest, const char *src, size_t n)**`
+**`char *strncat(char *dest, const char *src, size_t n)`**
 
-<font style="color:rgb(51, 51, 51);">把 </font>**`<font style="color:rgb(51, 51, 51);">src</font>**`<font style="color:rgb(51, 51, 51);"> 所指向的字符串追加到 </font>**`<font style="color:rgb(51, 51, 51);">dest</font>**`<font style="color:rgb(51, 51, 51);"> 所指向的字符串的结尾，直到 </font>**`<font style="color:rgb(51, 51, 51);">n</font>**`<font style="color:rgb(51, 51, 51);"> 字符长度为止。</font>
+把 **`src`** 所指向的字符串追加到 **`dest`** 所指向的字符串的结尾，直到 **`n`** 字符长度为止。
 
-> **`<font style="color:rgb(51, 51, 51);">dest</font>**`<font style="color:rgb(51, 51, 51);"> -- 指向目标数组，该数组包含了一个 C 字符串，且足够容纳追加后的字符串，包括额外的空字符。</font>
+> **`dest`** -- 指向目标数组，该数组包含了一个 C 字符串，且足够容纳追加后的字符串，包括额外的空字符。
 >
-> **`<font style="color:rgb(51, 51, 51);">src</font>**`<font style="color:rgb(51, 51, 51);"> -- 要追加的字符串。</font>
+> **`src`** -- 要追加的字符串。
 >
-> **`<font style="color:rgb(51, 51, 51);">n</font>**`<font style="color:rgb(51, 51, 51);"> -- 要追加的最大字符数。</font>
->
+> **`n`** -- 要追加的最大字符数。
 
-在 **`\0**` 后面追加
+在 **`\0`** 后面追加
 
 ```c
 char arr[128] = "Hello World";
@@ -1650,29 +1639,27 @@ printf("%s\n",arr1);// Print "Hello World niha"
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701257197587-3b03db6d-76bf-430e-9df4-b62878c44e05.png)
 
 ## `strcmp` 和 `strncmp` 字符串比较
-**`int strcmp(const char *str1, const char *str2)**`
+**`int strcmp(const char *str1, const char *str2)`**
 
-把 **`str1**` 所指向的字符串和 **`str2**` 所指向的字符串进行比较
+把 **`str1`** 所指向的字符串和 **`str2`** 所指向的字符串进行比较
 
-**`int strncmp(const char *s1, const char *s2, size_t n)**`
+**`int strncmp(const char *s1, const char *s2, size_t n)`**
 
-把 **`str1**`和 **`str2**`进行比较，最多比较前 **`n**` 个字符
+把 **`str1`**和 **`str2`**进行比较，最多比较前 **`n`**个字符
 
-> **<font style="color:rgb(102, 102, 102);">str1</font>**<font style="color:rgb(102, 102, 102);"> -- 要进行比较的第一个字符串。</font>
+> **str1** -- 要进行比较的第一个字符串。
 >
-> **<font style="color:rgb(102, 102, 102);">str2</font>**<font style="color:rgb(102, 102, 102);"> -- 要进行比较的第二个字符串。</font>
+> **str2** -- 要进行比较的第二个字符串。
 >
-> **<font style="color:rgb(102, 102, 102);">n</font>**<font style="color:rgb(102, 102, 102);"> -- 要比较的最大字符数。</font>
->
+> **n** -- 要比较的最大字符数。
 
 返回值
 
-> <font style="color:rgb(102, 102, 102);">如果返回值 < 0，则表示 str1 小于 str2。（可能差值）</font>
+> 如果返回值 < 0，则表示 str1 小于 str2。（可能差值）
 >
-> <font style="color:rgb(102, 102, 102);">如果返回值 > 0，则表示 str1 大于 str2。（可能差值）</font>
+> 如果返回值 > 0，则表示 str1 大于 str2。（可能差值）
 >
-> <font style="color:rgb(102, 102, 102);">如果返回值 = 0，则表示 str1 等于 str2。</font>
->
+> 如果返回值 = 0，则表示 str1 等于 str2。
 
 ```c
 char arr[128] = "Hello World";
@@ -1692,21 +1679,24 @@ printf("%d\n",strncmp(arr,arr1,3));// 'H' - 'n'
 
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701258596594-a6512c29-9106-4a94-aa35-173d3b291c9c.png)
 
-## `strchr`  和 `strrchr` 字符查找
-`char *strchr(const char *str, int c)`
+## ``  和 `strrchr` 字符查找
+**`char *strchr(const char *str, int c)`**
 
-<font style="color:rgb(51, 51, 51);">在参数 </font>**`<font style="color:rgb(51, 51, 51);">str</font>**`<font style="color:rgb(51, 51, 51);"> 所指向的字符串中搜索 </font><font style="color:#DF2A3F;">第一次</font><font style="color:rgb(51, 51, 51);"> 出现字符 </font>**`<font style="color:rgb(51, 51, 51);">c</font>**`<font style="color:rgb(51, 51, 51);">（一个无符号字符）的位置</font>
+在参数 **`str`** 所指向的字符串中搜索 第一次 出现字符 **`c`**（一个无符号字符）的位置
 
-`char *strrchr(const char *str, int c)`
+**`char *strrchr(const char *str, int c)`**
 
-<font style="color:rgb(51, 51, 51);"> 在参数 </font>**`<font style="color:rgb(51, 51, 51);">str</font>**`<font style="color:rgb(51, 51, 51);"> 所指向的字符串中搜索 </font><font style="color:#DF2A3F;">最后一次</font><font style="color:rgb(51, 51, 51);"> 出现字符 </font>**`<font style="color:rgb(51, 51, 51);">c</font>**`<font style="color:rgb(51, 51, 51);">（一个无符号字符）的位置</font>
+ 在参数 **`str` **所指向的字符串中搜索 最后一次 出现字符 **`c`**（一个无符号字符）的位置
 
-> **`<font style="color:rgb(51, 51, 51);">str</font>**`<font style="color:rgb(51, 51, 51);"> -- C 字符串。</font>
+**`str`** -- C 字符串。
+
+>**`str`**-- C 字符串。
 >
-> **`<font style="color:rgb(51, 51, 51);">c</font>**`<font style="color:rgb(51, 51, 51);"> -- 要搜索的字符，通常以整数形式传递（ASCII 值），但是最终会转换回 </font>`<font style="color:rgb(51, 51, 51);">char</font>`<font style="color:rgb(51, 51, 51);"> 形式。</font>
->
+>**`c`** -- 要搜索的字符，通常以整数形式传递（ASCII 值），但是最终会转换回 `char` 形式。
 
-返回值：**`strchr()****` ****`<font style="color:rgb(51, 51, 51);">strrchr()</font>**`<font style="color:rgb(51, 51, 51);"> 函数从字符串的 </font><font style="color:#DF2A3F;">从头 末尾 </font><font style="color:rgb(51, 51, 51);">开始向前搜索，直到找到指定的字符或搜索完整个字符串。如果找到字符，它将返回一个指向该字符的指针，否则返回 NULL。</font>
+**`c`** -- 要搜索的字符，通常以整数形式传递（ASCII 值），但是最终会转换回 **`char`** 形式。
+
+返回值：**`strchr()`**  **`strrchr()`** 函数从字符串的 **末尾** 开始向前搜索，直到找到指定的字符或搜索完整个字符串。如果找到字符，它将返回一个指向该字符的指针，否则返回 NULL。
 
 ```c
 char arr[128]="Hello Wolrd";
@@ -1717,16 +1707,15 @@ printf("%s\n",strrchr(arr,'l'));
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701307747485-ad012475-2acf-440f-8cfc-bf196db20e20.png)
 
 ## `strstr` 字符串查找函数
-**`char *strstr(const char *haystack, const char *needle)**`
+**`char *strstr(const char *haystack, const char *needle)`**
 
-> **`<font style="color:rgb(51, 51, 51);">haystack</font>**`<font style="color:rgb(51, 51, 51);"> -- 要被检索的 C 字符串。</font>
+> **`haystack`** -- 要被检索的 C 字符串。
 >
-> **`<font style="color:rgb(51, 51, 51);">needle</font>**`<font style="color:rgb(51, 51, 51);"> -- 在 haystack 字符串内要搜索的小字符串。</font>
+> **`needle`** -- 在 haystack 字符串内要搜索的小字符串。
 >
-
-<font style="color:rgb(51, 51, 51);">在字符串 </font>**`<font style="color:rgb(51, 51, 51);">haystack</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">中查找第一次出现字符串 </font>**`<font style="color:rgb(51, 51, 51);">needle</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">的位置，不包含终止符 </font>**`<font style="color:rgb(51, 51, 51);">'\0'</font>**`
-
-<font style="color:rgb(51, 51, 51);">返回值：</font><font style="color:rgb(51, 51, 51);">该函数返回在 </font>**`<font style="color:rgb(51, 51, 51);">haystack</font>**`<font style="color:rgb(51, 51, 51);"> 中第一次出现 </font>**`<font style="color:rgb(51, 51, 51);">needle</font>**`<font style="color:rgb(51, 51, 51);"> 字符串的位置，如果未找到则返回 </font>**`<font style="color:rgb(51, 51, 51);">NULL</font>**`<font style="color:rgb(51, 51, 51);">。</font>
+> 在字符串 **`haystack`** 中查找第一次出现字符串 **`needle`** 的位置，不包含终止符 **`'\0'`**
+>
+> 返回值：该函数返回在 **`haystack`** 中第一次出现 **`needle`** 字符串的位置，如果未找到则返回 **`NULL`**。
 
 ```c
 char arr[128]="Hello Wolrd";
@@ -1749,20 +1738,23 @@ printf("%s\n",arr);
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701260794018-fd5194b1-3961-490a-8a1e-a683e9f8c803.png)
 
 ## `strtok` 字符串切割
-**`char *strtok(char *str, const char *delim)**`
+```
+**char \*strtok(char \*str, const char \*delim)**
+```
 
-> **`<font style="color:rgb(51, 51, 51);">str</font>**<font style="color:rgb(51, 51, 51);"></font>`<font style="color:rgb(51, 51, 51);">-- 要被分解成一组小字符串的字符串。</font>
->
-> **`<font style="color:rgb(51, 51, 51);">delim</font>**<font style="color:rgb(51, 51, 51);"></font>`<font style="color:rgb(51, 51, 51);">-- 包含分隔符的 C 字符串。</font>
->
+**`str`**-- 要被分解成一组小字符串的字符串。
 
-<font style="color:rgb(51, 51, 51);">分解字符串 </font>**`<font style="color:rgb(51, 51, 51);">str</font>**`<font style="color:rgb(51, 51, 51);"> 为一组字符串，</font>**`<font style="color:rgb(51, 51, 51);">delim</font>**`<font style="color:rgb(51, 51, 51);"> 为分隔符</font>
+**`delim`**-- 包含分隔符的 C 字符串。
 
-<font style="color:rgb(51, 51, 51);">返回值：</font><font style="color:rgb(51, 51, 51);">该函数返回被分解的第一个子字符串，如果没有可检索的字符串，则返回一个空指针 </font>**`<font style="color:rgb(51, 51, 51);">NULL</font>**`<font style="color:rgb(51, 51, 51);">。</font>
+分解字符串 **`str`** 为一组字符串，**`delim`** 为分隔符
 
-<font style="color:rgb(51, 51, 51);">注意：</font>
+返回值：该函数返回被分解的第一个子字符串，如果没有可检索的字符串，则返回一个空指针 **`NULL`**。
 
-**`<font style="color:rgb(51, 51, 51);">str</font>**`<font style="color:rgb(51, 51, 51);"> 第一次必须字符串的首地址 以后切割赋值为 </font>**`<font style="color:rgb(51, 51, 51);">NULL</font>**`
+注意：
+
+```
+**str**` 第一次必须字符串的首地址 以后切割赋值为 `**NULL**
+```
 
 ```c
 #include <stdio.h>
@@ -1791,16 +1783,16 @@ int main(int argc, char const *argv[])
 
 # 结构体
 ## 结构体概述
- 基本类型：**`char**` **`int**` **`short**` **`long**` **`float**` **`double**`
+ 基本类型：**`char`  `int`  `short`  `long`  `float`  `double`**
 
-构造类型：有基本类型封装打包而来，c**`har name[32]**` 结构体 **`struct**` 共用体 **`union**` 枚举**`enum**`
+构造类型：有基本类型封装打包而来，**`char name[32]`**  结构体  **`struct`**  共用体  **`union`**  枚举**`enum`**
 
-结构体：有关键字 **`struct****` **修饰，是一种或多种基本类型或构造类型的数据集合。
+结构体：有关键字 **`struct`**修饰，是一种或多种基本类型或构造类型的数据集合。
 
 ## 结构体类型定义
 **操作结构体成员的时候 必须遵循 成员自身的变量**
 
-+ 
+
 
 ```c
 struct stu // struct stu 整体代表结构体类型
@@ -1811,11 +1803,11 @@ struct stu // struct stu 整体代表结构体类型
  struct stu lucy;// 用类型定义变量
 ```
 
-**`lucy**` 是结构体 <font style="color:#DF2A3F;">变量</font> 
+**`lucy`** 是结构体 **变量** 
 
-**`num**` **`name**` 是结果结构体 <font style="color:#DF2A3F;">成员</font>
+**`num` , `name`** 是结果结构体 **成员**
 
-+ 
+
 
 ```c
 struct stu
@@ -1829,11 +1821,11 @@ struct stu tom; // 继续定义结构体变量
 
 ![画板](https://cdn.nlark.com/yuque/0/2023/jpeg/40457975/1701409403899-54497444-dc8e-4eba-9e2c-9f7133902516.jpeg)
 
-结构体成员拥有 <font style="color:#DF2A3F;">独立</font> 空间
+结构体成员拥有 独立 空间
 
-**`bob.num**` 取 <font style="color:#DF2A3F;">bob</font> 的 <font style="color:#DF2A3F;">num</font> 成员 类型为 **`int**`
+**`bob.num`** 取 bob 的 num 成员 类型为 **int**
 
-**`lucy.name****` **取 <font style="color:#DF2A3F;">lucy</font> 的 <font style="color:#DF2A3F;">name</font> 成员 是 <font style="color:#DF2A3F;">数组名</font>
+**`lucy.name`** 取 lucy 的 name 成员 是 **数组名**
 
 ```c
 #include <stdio.h>
@@ -1876,7 +1868,7 @@ memset(&bob,0,sizeof(bob)); // 内存空间全部清零
 
 
 ### 结构体成员操作
-+ 
+
 
 ```c
 bob.num = lucy.num; // 逐个赋值
@@ -1884,7 +1876,7 @@ bob.num = lucy.num; // 逐个赋值
 
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701411420001-c0d0ca83-ac95-4e5e-a795-c2d86655bd20.png)
 
-+ 
+
 
 ```c
 bob = lucy;
@@ -1892,7 +1884,7 @@ bob = lucy;
 
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701411451244-7194e0f7-aa96-44f3-adb3-150e8f307db8.png)
 
-+ 
+
 
 ```c
 memcpy(&bob,&lucy,sizeof(struct stu));
@@ -1909,10 +1901,11 @@ scanf("%d %s %f", &bob.nums, bob.name, &bob.score);
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701411901449-9864843b-7c8b-47e4-8151-a52637a15932.png)
 
 ## 结构体嵌套结构体
-:::tips
-**访问 成员 一定要访问到 最底层**
+****
 
-:::
+> [!NOTE]
+>
+> **访问 成员 一定要访问到 最底层**
 
 ```c
 struct A
@@ -1998,7 +1991,7 @@ struct A{
 
 
 ## 结构体数组
-本质 是<font style="color:#DF2A3F;">数组</font> 每个元素存储一个 <font style="color:#DF2A3F;">结构体</font>
+本质 是 **数组** 每个元素存储一个 **结构体**
 
 ![画板](https://cdn.nlark.com/yuque/0/2023/jpeg/40457975/1701416095609-6b7e1760-3431-40b9-9788-343490242f24.jpeg)
 
@@ -2049,7 +2042,7 @@ void print_info(struct stu *edu, int n)
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701415708098-70a377be-2ef2-4d14-9245-7c4dece1eaab.png)
 
 ## 指针成员
-结构体中有 <font style="color:#DF2A3F;">指针成员</font> ，一定要指向 <font style="color:#DF2A3F;">合法空间</font>（栈区，堆区，全局区，文字常量区）
+结构体中有 **指针成员**，一定要指向 **合法空间** （栈区，堆区，全局区，文字常量区）
 
 ```c
 typedef struct stu
@@ -2061,16 +2054,15 @@ typedef struct stu
 ```
 
 ### 指针成员 `栈区` 指向 `文字常量区`
-**`struct stu**` **`(STU)****` **在栈区
+**`struct stu STU` **在栈区
 
-> **`nums**` 在栈区
+> **`nums`** 在栈区
 >
-> **`name**`在栈区
+> **`name`**在栈区
 >
-> **`score**` 在栈区
->
+> **`score`** 在栈区
 
-**`"Hello World"**` 在文字常量区
+**`"Hello World"`** 在文字常量区
 
 ```c
 STU lucy ={100,"Hello Wolrd",100.0};// 赋值操作
@@ -2090,14 +2082,14 @@ strcpy(lucy.name,"Hello Wolrd"); // 赋值
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701418815335-ad35bcaf-1311-4bd9-bf27-deed50c36e63.png)
 
 ## 结构体 浅拷贝 深拷贝
-**当结构体中 ****<font style="color:#DF2A3F;">没有指针成员 </font>****浅拷贝 ****<font style="color:#DF2A3F;">不会出现任何问题</font>**
+**当结构体中 没有指针成员浅拷贝不会出现任何问题**
 
 ### 浅拷贝：
-**结构体变量 ****<font style="color:#DF2A3F;">空间内容</font>**** 直接赋值 给另一个结构体变量 ****<font style="color:#DF2A3F;">空间</font>**
+**结构体变量 空间内容** 直接赋值 给另一个结构体变量 **空间**
 
-相同类型的结构体变量可以使用 **`=**` 直接赋值 （浅拷贝）
+相同类型的结构体变量可以使用 **`=`** 直接赋值 （浅拷贝）
 
-当结构体变量中有 <font style="color:#DF2A3F;">指针成员 </font>且<font style="color:#DF2A3F;"> 指向堆区</font> 容易造成双重释放 **`double free****` **<font style="color:#DF2A3F;">问题</font>
+当结构体变量中有 指针成员 且 指向堆区 容易造成双重释放 **`double free` **问题
 
 ```c
 STU lucy={100,"Hello Wolrd",100.0};
@@ -2106,7 +2098,7 @@ bob = lucy; //浅拷贝
 ```
 
 ### 深拷贝
-**让结构体变量的 ****<font style="color:#DF2A3F;">指针成员</font>**** 指向 ****<font style="color:#DF2A3F;">独立的空间</font>**
+**让结构体变量的 **指针成员 指向 **独立的空间**
 
 ```c
 STU lucy;
@@ -2136,19 +2128,18 @@ typedef struct stu
 
 `&lucy = &lucy.score`
 
-**`p+1**` 跳过这个结构体
+**`p+1`** 跳过这个结构体
 
 ```c
 STU *p = &lucy; //定义结构体指针变量
 ```
 
 ## 遍历的三种方式
-> **`lucy.nums**`
+> **`lucy.nums`**
 >
-> **`(*p).name**`
+> **`(*p).name`**
 >
-> **`p->score**`
->
+> **`p->score`**
 
 ```c
 typedef struct stu
@@ -2286,7 +2277,7 @@ int main(int argc, char const *argv[])
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1703739103810-02a210a6-5c2c-4db0-8f20-84550005a60a.png)
 
 ### 结构体自动对齐规则
-假如CPU的提取单位为<font style="color:#DF2A3F;">4个字节</font>
+假如CPU的提取单位为 **4个字节**
 
 目的：计算机为了加快运算
 
@@ -2326,12 +2317,11 @@ int main(int argc, char const *argv[])
 
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1703740573444-c6891adc-d537-4ae8-8b32-89dfd5ec9a21.png)
 
-### 
 ## 位域
 ### 概述定义
 结构体中成员所在空间以二进制位计算 称之为位域或位段
 
-a所在的位数<font style="color:#DF2A3F;">不能超过</font>自身类型的二进制位数
+a所在的位数 **不能超过** 自身类型的二进制位数
 
 ```c
 typedef struct weiyu
@@ -2341,9 +2331,9 @@ typedef struct weiyu
 } WY;
 ```
 
-给位域赋值的时候 <font style="color:#DF2A3F;">不要超过</font>他所在位的最大值
+给位域赋值的时候 **不要超过** 他所在位的最大值
 
-**`a <= 7**`
+**`a <= 7`**
 
 ```c
 #include <stdio.h>
@@ -2393,7 +2383,7 @@ int main(int argc, char const *argv[])
 
 
 ### 相邻位域可以压缩
-<font style="color:#DF2A3F;">相邻且相同类型 </font>的位域 称为相邻位域
+**相邻且相同类型** 的位域 称为相邻位域
 
 ```c
 typedef struct weiyu
@@ -2407,12 +2397,11 @@ typedef struct weiyu
 } WY;
 ```
 
-> **`ab****` **是相邻位域
+> **`ab` **是相邻位域
 >
-> **`bcd****` **不是相邻位域
+> **`bcd` **不是相邻位域
 >
-> **`de****` **不是相邻位域
->
+> **`de` **不是相邻位域
 
 1. 相邻位数可以压缩
 
@@ -2437,7 +2426,7 @@ int main(int argc, char const *argv[])
 
 
 
-2. 压缩的位数 <font style="color:#DF2A3F;">不能超过</font>成员自身类型位数
+压缩的位数 **不能超过** 成员自身类型位数
 
 ```c
 #include <stdio.h>
@@ -2461,7 +2450,7 @@ int main(int argc, char const *argv[])
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701574322409-78a223e7-0e67-4c49-9a85-cb87fc618fed.png)
 
 ### 另起一个存储单元
-**`unsigned char : 0;**`
+**`unsigned char : 0;`**
 
 ```c
 typedef struct weiyu
@@ -2473,7 +2462,7 @@ typedef struct weiyu
 ```
 
 ### 无意义位宽
-**`unsigned char : 2;**`
+**`unsigned char : 2;`**
 
 ```c
 typedef struct weiyu
@@ -2485,11 +2474,11 @@ typedef struct weiyu
 ```
 
 # 共用体
-<font style="color:rgb(51, 51, 51);">结构体的各个成员会占用不同的内存，互相之间没有影响</font>
+结构体的各个成员会占用不同的内存，互相之间没有影响
 
-<font style="color:rgb(51, 51, 51);">所有的数据成员具有</font>**<font style="color:rgb(51, 51, 51);">相同的起始地址</font>**
+所有的数据成员具有**相同的起始地址**
 
-关键字 **`union**`
+关键字 **`union`**
 
 ```c
 union D
@@ -2505,7 +2494,7 @@ union D
 
 2，大小能被其包含的所有基本数据类型的大小所整除。
 
-1. 
+
 
 ```c
 #include <stdio.h>
@@ -2527,7 +2516,7 @@ int main(int argc, char const *argv[])
 
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701575773786-8301540e-f10e-44da-a3de-96b5ed542b32.png)
 
-2. 
+
 
 ```c
 #include <stdio.h>
@@ -2553,7 +2542,7 @@ int main(int argc, char const *argv[])
 
 
 
-<font style="color:rgb(51, 51, 51);">共用体的所有成员 </font>**<font style="color:rgb(243, 59, 69);">共享 </font>**<font style="color:rgb(51, 51, 51);">同一段内存，同一时间只能储存其中一个数据成员</font>
+共用体的所有成员 **共享** 同一块内存 同一时间只能存储其中一个数据成员
 
 ```c
 #include <stdio.h>
@@ -2629,10 +2618,10 @@ typedef struct stu
 
 ![](https://cdn.nlark.com/yuque/0/2023/png/40457975/1701590726435-a670cb96-d538-4f78-b2b6-9783eba03dfc.png)
 
-## **`malloc****` **应用
-<font style="color:rgb(18, 18, 18);">一般变量都是在 </font><font style="color:#DF2A3F;">栈上 </font><font style="color:rgb(18, 18, 18);">分配的，函数退出就没有了</font>
+## **`malloc` **应用
+一般变量都是在栈上分配的，函数退出就没有了
 
-**`<font style="color:rgb(18, 18, 18);">malloc</font>****`<font style="color:rgb(18, 18, 18);"> </font>**<font style="color:rgb(18, 18, 18);">动态分配的变量是在 </font><font style="color:#DF2A3F;">堆上</font><font style="color:rgb(18, 18, 18);"> 的，只要不 </font>**`<font style="color:rgb(18, 18, 18);">free</font>****`<font style="color:rgb(18, 18, 18);"> </font>**<font style="color:rgb(18, 18, 18);">就一直存在。</font>
+**`malloc`**动态分配的变量是在堆上的空间，只要不**`free`**就一直存在。
 
 ## 动态链表
 ### 头插入
@@ -2819,10 +2808,6 @@ STU *delete_info(STU *head, int nums)
 
 
 
-
-
-
-
 ## 节点释放
 ```c
 STU *free_Link(STU *head)
@@ -2915,9 +2900,9 @@ void Link_sort(STU *head)
 
 # 文件操作
 ## 磁盘文件的分类
-不管任何文件 在 <font style="color:#DF2A3F;">物理上</font> 都是二进制存储
+不管任何文件 在 **物理上** 都是二进制存储
 
-从逻辑上将磁盘文件分为 <font style="color:#DF2A3F;">二进制文件</font>，<font style="color:#DF2A3F;">文本文件</font>
+从逻辑上将磁盘文件分为 <u>二进制文件, 文本文件</u>
 
 ### 文本文件
 基于字符编码 存储的是每个字符的ASCII值 一个字节一意思 
@@ -2940,144 +2925,141 @@ void Link_sort(STU *head)
 数 `5678` 的存储形式位：二进制码：`00010110 00101110`
 
 ## `mode` 打开方式
-> **`r**` **`rb****` **只读（不创建文件）
+> **`r` `rb`**只读（不创建文件）
 >
-> **`w**`  **`wb**`以写方式打开文件（使文件长度截断为0字节，创建一个文件）
+> **`w**`  `wb`**以写方式打开文件（使文件长度截断为0字节，创建一个文件）
 >
-> **`a**`  **`ab**`以添加方式打开文件，即在末尾添加内容，当文件不存在时，创建文件用于写
+> **`a`  `ab`**以添加方式打开文件，即在末尾添加内容，当文件不存在时，创建文件用于写
 >
-> **`r+****` ****`rb+**` 以可读可写的方式打开文件（不创建新文件）
+> **`r+` `rb+`** 以可读可写的方式打开文件（不创建新文件）
 >
-> **`w+****` ****`wb+****` **以可读可写的方式打开文件（使文件长度为0字节，创建一个文件）
+> **`w+` `wb+`**以可读可写的方式打开文件（使文件长度为0字节，创建一个文件）
 >
-> **`a+****` ****`ab+****` **以添加方式打开文件，打开文件并在末尾更改文件（如果文件不存在，则创建文件）
+> **`a+` `ab+`**以添加方式打开文件，打开文件并在末尾更改文件（如果文件不存在，则创建文件）
 >
-> **`t**` 打开文本文件（默认省略）
+> **`t`** 打开文本文件（默认省略）
 >
-> **`b****` **打开二进制文件
->
+> **`b`**打开二进制文件
 
 ## 文件的API
 ### `fopen` 打开文件
-**`FILE *fopen( const char *filename, const char *mode );**`
+**`FILE *fopen( const char *filename, const char *mode );`**
 
-> **`<font style="color:rgb(51, 51, 51);">filename</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">是字符串，用来命名文件</font>
+> **`filename`** 是字符串，用来命名文件
 >
-> **`<font style="color:rgb(51, 51, 51);">mode</font>**` 访问模式的值可以是下列值中的一个
->
+> **`mode`**  访问模式的值可以是下列值中的一个
 
 返回指针：
 
 > 成功，文件指针
 >
-> 失败， **`NULL**`
+> 失败， **`NULL`**
 >
 
 ### `fclose` 关闭文件
-**`int fclose( FILE *fp );**`
+**`int fclose( FILE *fp );`**
 
-<font style="color:rgb(51, 51, 51);"> 返回值：</font>
+ 返回值：
 
-> <font style="color:rgb(51, 51, 51);">如果成功关闭文件，</font>**`<font style="color:rgb(51, 51, 51);">fclose( )</font>**`<font style="color:rgb(51, 51, 51);">函数返回零，</font>
+> 如果成功关闭文件，**`fclose( )`**函数返回零，
 >
-> <font style="color:rgb(51, 51, 51);">如果关闭文件时发生错误，函数返回 </font>**`<font style="color:rgb(51, 51, 51);">EOF</font>**`
->
-
-### **<font style="color:rgb(51, 51, 51);">写入文件</font>**
-#### **`fputc**` <font style="color:rgb(51, 51, 51);">字符写入到流中</font>
-**`int fputc( int c, FILE *fp );**`
-
-<font style="color:rgb(51, 51, 51);">函数 </font>**`<font style="color:rgb(51, 51, 51);">fputc()</font>**`<font style="color:rgb(51, 51, 51);"> 把参数 </font>**`<font style="color:rgb(51, 51, 51);">c</font>**`<font style="color:rgb(51, 51, 51);"> 的字符值写入到 </font>**`<font style="color:rgb(51, 51, 51);">fp</font>**`<font style="color:rgb(51, 51, 51);"> 所指向的输出流中</font>
-
-<font style="color:rgb(51, 51, 51);">返回值：</font>
-
-> <font style="color:rgb(51, 51, 51);">成功，返回写入的字符</font>
->
-> <font style="color:rgb(51, 51, 51);">失败，则会返回 </font>**`<font style="color:rgb(51, 51, 51);">EOF</font>****`<font style="color:rgb(51, 51, 51);"> -1</font>**
+> 如果关闭文件时发生错误，函数返回 **`EOF`**
 >
 
-#### `fputs` <font style="color:rgb(51, 51, 51);">以 </font>`<font style="color:rgb(51, 51, 51);">NULL</font>`<font style="color:rgb(51, 51, 51);"> 结尾的字符串写入到流中</font>
-**`int fputs( const char *s, FILE *fp );**`
+### 写入文件
+#### `fputc` 字符写入到流中
+**`int fputc( int c, FILE *fp );`**
 
-<font style="color:rgb(51, 51, 51);">函数 </font>**`<font style="color:rgb(51, 51, 51);">fputs()</font>**`<font style="color:rgb(51, 51, 51);"> 把字符串 </font>**`<font style="color:rgb(51, 51, 51);">s</font>**`<font style="color:rgb(51, 51, 51);"> 写入到 </font>**`<font style="color:rgb(51, 51, 51);">fp</font>**`<font style="color:rgb(51, 51, 51);"> 所指向的输出流中，遇到</font>**`<font style="color:rgb(51, 51, 51);">\0</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">会停止写入</font>
+函数 **`fputc()`**  把参数 **`c`** 的字符值写入到**`fp`**  所指向的输出流中
 
-<font style="color:rgb(51, 51, 51);">返回值</font>
+返回值
 
-> <font style="color:rgb(51, 51, 51);">成功，它会返回一个非负值</font>
+> 成功，返回写入的字符
 >
-> <font style="color:rgb(51, 51, 51);">失败，则会返回 </font>**`<font style="color:rgb(51, 51, 51);">EOF</font>****`<font style="color:rgb(51, 51, 51);"> -1</font>**
+> 失败，则会返回 **`EOF` -1**
+
+####  `fputs` 以 `NULL` 结尾的字符串写入到流中
+
+**`int fputs( const char *s, FILE *fp );`**
+
+函数 **`fputs()`** 把字符串 **`s`**  写入到 **`fp`** 所指向的输出流中，遇到 **`\0`** 会停止写入
+
+返回值
+
+> 成功，它会返回一个非负值
 >
+> 失败，则会返回 **`EOF` -1**
 
 
 
 ### 读取文件
-#### `fgetc` <font style="color:rgb(51, 51, 51);">读取单个字符</font>
-**`int fgetc( FILE * fp );**`
+#### `fgetc` 读取单个字符
+**`int fgetc( FILE * fp );`**
 
-**`<font style="color:rgb(51, 51, 51);">fgetc()</font>**`<font style="color:rgb(51, 51, 51);"> 函数从 </font>**`<font style="color:rgb(51, 51, 51);">fp</font>**`<font style="color:rgb(51, 51, 51);"> 所指向的输入文件中读取一个字符</font>
+**`fgetc()`**  函数从 **`fp`** 所指向的输入文件中读取一个字符
 
-<font style="color:rgb(51, 51, 51);">返回值</font>
+返回值
 
-> <font style="color:rgb(51, 51, 51);">成功，读取的字符</font>
+> 成功，读取的字符
 >
-> <font style="color:rgb(51, 51, 51);">失败，则返回 </font>**`<font style="color:rgb(51, 51, 51);">EOF</font>**`<font style="color:rgb(51, 51, 51);">。</font>**`<font style="color:rgb(51, 51, 51);">EOF</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">代表文本末尾</font>
+> 失败，则返回 **`EOF`**。**`EOF`**代表文本末尾
+
+读取后文件指针会 ==自动向后 一位移动==。
+
+#### `fgets` 读取单行字符串
+**`char *fgets( char *buf, int n, FILE *fp );`**
+
+函数 **`fgets()`** 从**`fp`** 所指向的输入流中读取 **`n-1`** 个字符，它会把读取的字符串复制到缓冲区 **`buf</font>`**，并在最后追加一个**`NULL`** 字符来终止字符串。
+
+返回值：
+
+> 成功，返回 **`buf`**  指向的地址
+>
+> 失败：**`NULL`**
 >
 
-读取后文件指针会<font style="color:#DF2A3F;">自动</font>向后<font style="color:#DF2A3F;">一位移动</font>。
+如果这个函数在读取 最后一个字符 之前 就遇到一个换行符  **`\n`** 或文件的末尾 **`EOF`**，则只会返回读取到的字符，包括换行符 **`\n`**
 
-#### `<font style="color:rgb(51, 51, 51);">fgets</font>` 读取单行字符串
-**`char *fgets( char *buf, int n, FILE *fp );**`
-
-<font style="color:rgb(51, 51, 51);">函数 </font>**`<font style="color:rgb(51, 51, 51);">fgets()</font>**`<font style="color:rgb(51, 51, 51);"> 从 </font>**`<font style="color:rgb(51, 51, 51);">fp</font>**`<font style="color:rgb(51, 51, 51);"> 所指向的输入流中读取 </font>**`<font style="color:rgb(51, 51, 51);">n-1</font>****`<font style="color:rgb(51, 51, 51);"> </font>**<font style="color:rgb(51, 51, 51);">个字符，它会把读取的字符串复制到缓冲区 </font>**`<font style="color:rgb(51, 51, 51);">buf</font>**`<font style="color:rgb(51, 51, 51);">，并在最后追加一个 </font>**`<font style="color:rgb(51, 51, 51);">NULL</font>**`<font style="color:rgb(51, 51, 51);"> 字符来终止字符串。</font>
-
-<font style="color:rgb(51, 51, 51);">返回值：</font>
-
-> <font style="color:rgb(51, 51, 51);">成功，返回 </font>**`<font style="color:rgb(51, 51, 51);">buf</font>**`<font style="color:rgb(51, 51, 51);"> 指向的地址</font>
->
-> <font style="color:rgb(51, 51, 51);">失败：</font>**`<font style="color:rgb(51, 51, 51);">NULL</font>**`
->
-
-<font style="color:rgb(51, 51, 51);">如果这个函数在读取 最后一个字符 </font><font style="color:#DF2A3F;">之前</font><font style="color:rgb(51, 51, 51);"> 就遇到一个换行符  </font>**`<font style="color:rgb(51, 51, 51);">\n</font>**`<font style="color:rgb(51, 51, 51);">  或文件的末尾 </font>**`<font style="color:rgb(51, 51, 51);">EOF</font>**`<font style="color:rgb(51, 51, 51);">，则</font><font style="color:#DF2A3F;">只会返回读取到的字符</font><font style="color:rgb(51, 51, 51);">，</font><font style="color:#DF2A3F;">包括换行符 </font>**`\n**`
-
-读取后文件指针会<font style="color:#DF2A3F;">自动</font>向后<font style="color:#DF2A3F;">一行移动</font>。
+读取后文件指针会自动向后一行移动。
 
 ```c
 int *p;
-    int *p1;
-    //*p=a;
-    p1=&a;
-    printf("%d\n",*p);
+int *p1;
+//*p=a;
+p1=&a;
+printf("%d\n",*p);
 ```
 
 ### 文件指针
 #### `rewind`
-**`<font style="color:rgb(68, 68, 68);background-color:rgb(248, 248, 248);">void rewind(FILE *fp)</font>**`**`<font style="color:rgb(68, 68, 68);">rewind</font>**`<font style="color:rgb(68, 68, 68);"> 函数用于将文件内部的位置指针重新指向一个流（数据流或者文件）的</font><font style="color:#DF2A3F;">起始位置</font><font style="color:rgb(68, 68, 68);">。这里需要注意的是，这里的“指针”表示的不是文件指针，而是文件内部的位置指针。即随着对文件的读写，文件的位置指针（指向当前读写字节）向后移动。</font>
+**`void rewind(FILE *fp)`
 
-#### `ftell`<font style="color:rgb(68, 68, 68);">获取当前文件位置指针的值，即从文件开头到当前位置的字节数量</font>
-**`long int ftell(FILE *stream)**`
+**`rewind`** 函数用于将文件内部的位置指针重新指向一个流（数据流或者文件）的 ==起始位置==。这里需要注意的是，这里的“指针”表示的不是文件指针，而是文件内部的位置指针。即随着对文件的读写，文件的位置指针（指向当前读写字节）向后移动。
+
+#### `ftell`获取当前文件位置指针的值，即从文件开头到当前位置的字节数量
+**`long int ftell(FILE *stream)`**
 
 返回值：
 
-> <font style="color:rgb(51, 51, 51);">成功：该函数返回位置标识符的当前值。</font>
+> 成功：该函数返回位置标识符的当前值。
 >
-> <font style="color:rgb(51, 51, 51);">错误：则返回 -1L，全局变量 </font>**`<font style="color:rgb(51, 51, 51);">errno</font>**`<font style="color:rgb(51, 51, 51);"> 被设置为一个正值</font>
+> 错误：则返回 -1L，全局变量**`errno`** 被设置为一个正值
 >
 
 #### `fseek`
-**`int fseek(FILE *stream, long int offset, int whence)**`
+**`int fseek(FILE *stream, long int offset, int whence)`**
 
-> **`<font style="color:rgb(51, 51, 51);">stream</font>**`<font style="color:rgb(51, 51, 51);">-- 这是指向 </font>**`<font style="color:rgb(51, 51, 51);">FILE</font>**`<font style="color:rgb(51, 51, 51);"> 对象的指针，该 </font>**`<font style="color:rgb(51, 51, 51);">FILE</font>**`<font style="color:rgb(51, 51, 51);"> 对象标识了流。</font>
+> **`stream`**-- 这是指向 **`FILE`** 对象的指针，该 **`FILE`** 对象标识了流。
 >
-> **`<font style="color:rgb(51, 51, 51);">offset</font>**`<font style="color:rgb(51, 51, 51);"> -- 这是相对 </font>**`<font style="color:rgb(51, 51, 51);">whence</font>**`<font style="color:rgb(51, 51, 51);">的偏移量，以字节为单位。</font>
+> **`offset`** -- 这是相对 **`whence`**的偏移量，以字节为单位。
 >
-> **`<font style="color:rgb(51, 51, 51);">whence</font>**`<font style="color:rgb(51, 51, 51);">-- 这是表示开始添加偏移 </font>**`<font style="color:rgb(51, 51, 51);">offset</font>**`<font style="color:rgb(51, 51, 51);"> 的位置。它一般指定为下列常量之一：</font>
->
+> **`whence`** -- 这是表示开始添加偏移 **`offset`** 的位置。它一般指定为下列常量之一：
 
-| **`<font style="color:rgb(51, 51, 51);">whence</font>**` | <font style="color:rgb(51, 51, 51);">描述</font> | |
-| --- | --- | --- |
-| **`<font style="color:rgb(51, 51, 51);">SEEK_SET</font>**` | <font style="color:rgb(51, 51, 51);">文件的开头</font> | |
-| **`<font style="color:rgb(51, 51, 51);background-color:rgb(246, 244, 240);">SEEK_CUR</font>**` | <font style="color:rgb(51, 51, 51);">文件指针的当前位置</font> | |
-| **`<font style="color:rgb(51, 51, 51);">SEEK_END</font>**` | <font style="color:rgb(51, 51, 51);">文件的末尾</font> | |
+| **`whence`** | 描述 |
+| --- | --- |
+| **`SEEK_SET`** | 文件的开头 |
+| **`SEEK_CUR`** | 文件指针的当前位置 |
+| **`SEEK_END`** | 文件的末尾 |
 
 
 返回值：
